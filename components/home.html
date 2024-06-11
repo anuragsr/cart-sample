@@ -1,0 +1,240 @@
+<nav class="navbar navbar-inverse">
+
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+
+      <a class="navbar-brand" href="#">Product Gallery</a>
+
+    </div>
+
+    <ul class="nav navbar-nav">
+
+      <li><a href="#">Home</a></li>
+
+      <li class="active"><a href="#">Products</a></li> 
+
+      <li><a href="#">Offers</a></li> 
+
+      <li><a href="#">About</a></li> 
+
+      <li><a href="#">Contact</a></li> 
+
+    </ul>
+
+  </div>
+
+</nav>
+
+<div class="col-md-12">
+
+    <h1>Products</h1> 
+
+    <hr/>
+
+</div>
+
+<div class="col-md-12">
+
+  <div ng-repeat="car in cars track by $index" class="col-md-2 car-item">
+
+    <div data-toggle="modal" data-target="#productModal" ng-click="showCar(car)">
+
+      <img ng-src="{{car.imgUrl}}"/><br/>
+
+      <div class="car-desc-item col-md-8">
+
+        {{car.name}}
+
+      </div>
+
+      <div class="car-desc-item go-right col-md-4">
+
+        $ {{car.price}}
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="modal fade" id="productModal" role="dialog">
+
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          <h4 class="modal-title">{{car.name}}</h4>
+
+        </div>
+
+        <div class="modal-body">
+
+          <div class="col-md-4">
+
+            <ul etalage-angular id="etalage"></ul>  
+
+          </div>
+
+          <div class="col-md-8">
+
+            <h1>{{car.name}}</h1>
+
+            <a href="#">Review Product</a>
+
+            <hr/>
+
+            <p class="car-content">
+
+              <div class="car-modal-header col-md-6"><h2>$ {{car.price}}</h2></div>
+
+              <div class="car-modal-header col-md-6 go-right"><h2>In Stock</h2>
+
+              </div>
+
+            </p>
+
+            <p class="car-content">
+
+              {{car.description}}
+
+            </p>
+
+            <a href="#" ng-click="addToCart(car)" class="btn btn-info btn-lg">
+
+              <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+      <!-- Modal content-->
+
+<div class="modal fade" id="cartModal" role="dialog">
+
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          <h4 class="modal-title">Your Cart</h4>
+
+        </div>
+
+        <div class="modal-body">
+          <p>
+            {{cartItems.length}} item(s) in your cart
+          </p>
+          <hr/>
+          <table class="table-striped table">
+
+            <tr>
+
+              <th>Item(s)</th>
+
+              <th>Price</th>
+
+              <th>Quantity</th>
+
+            </tr>
+
+            <tr ng-repeat="item in cartItems track by $index">
+
+              <td>
+
+                <img class="cartImage" ng-src="{{item.imgUrl}}">
+
+                <span style="margin-left:20px;">
+
+                  {{item.name}}
+
+                </span>
+
+              </td>
+
+              <td style="padding-top:5%;">$ {{item.price}}</td>
+
+              <td style="padding-top:5%;">
+
+                <select class="input-small">
+
+                  <option value="#">1</option>
+
+                  <option value="#">2</option>
+
+                  <option value="#">3</option>
+
+                  <option value="#">4</option>
+
+                  <option value="#">5</option>
+
+                  <option value="#">10</option>
+
+                </select>
+
+              </td>
+
+            </tr>
+
+          </table>
+
+          <hr/>
+
+          <div class="go-right">
+
+            <h2>Total: $14,555</h2>
+
+            <a href="#">Continue Shopping</a> or 
+
+            <button type="button" class="btn btn-lg">Checkout</button>
+
+          </div>
+
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

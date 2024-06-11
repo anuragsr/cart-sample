@@ -1,0 +1,83 @@
+body, html{
+
+	height: 100%;
+
+	width: 100%;
+
+}
+
+body{
+
+	background: #ddd;
+
+}
+
+.car-item{
+
+	width: 200px;
+    cursor: pointer;
+    margin: 10px;
+
+	padding: 0px;
+
+	box-shadow: 0px 0px 10px 0px black;
+
+}
+
+.car-item:hover{
+
+	box-shadow: 0px 0px 20px 5px black;
+
+}
+
+.car-item img{
+
+	width:100%;
+
+}
+
+.go-right{
+
+	text-align: right;
+
+}
+
+.car-desc-item{
+
+	padding: 10px;
+
+}
+
+.modal-dialog{
+
+	width: 80%;
+
+}
+
+#cartModal .modal-dialog{
+
+	width: 50%;
+
+}
+
+.car-modal-header{
+
+	padding:0;
+
+}
+
+.car-content{
+
+	margin:20px auto;
+
+}
+
+.cartImage{
+
+	height: 70px;
+
+	width: 70px;
+
+	border-radius:70px; 
+
+}

@@ -1,0 +1,96 @@
+<div class="slide car-detail">
+	<div class="content car-content">
+		<br/>		
+		<h1 class="title">
+			{{car.name}}
+		</h1>
+		<hr style="width:50%; margin:0 auto; border:1px solid #eaea06;"/>
+		<br/>
+		<div class="car-detail-container">
+			<div class="car-detail-box etalage-box">
+				<div style="text-align:center;">
+					<ul etalage-angular id="etalage">
+				</div>
+              	<div class="clearfix"></div>
+				<!-- <img class="mainImg" height="250" width="350" ng-src="{{car.imgUrl}}"/><br/><br/> -->
+			</div>
+			<div class="spec-box car-detail-box">
+				<h1>Price: £ {{car.price}}</h1>
+				<div class="clearfix">
+					<div class="car-left">
+						<div class="car-det-item">
+							<h2>Year/Reg</h2>
+							<h3>{{car.regYear}}</h3>
+						</div>
+						<div class="car-det-item">
+							<h2>Mileage</h2>
+							<h3>{{car.mileage}}</h3>
+						</div>
+						<div class="car-det-item">
+							<h2>Engine Size</h2>
+							<h3>{{car.engineSize}}</h3>
+						</div>
+						<div class="car-det-item">
+							<h2>Fuel Type</h2>
+							<h3>{{car.fuelType}}</h3>
+						</div>
+					</div>
+					<div class="car-right">
+						<div class="car-det-item">
+							<h2>Gear Box</h2>
+							<h3>{{car.gearBox}}</h3>
+						</div>
+						<div class="car-det-item">
+							<h2>Body Style</h2>
+							<h3>{{car.bodyStyle}}</h3>
+						</div>
+						<div class="car-det-item">
+							<h2>Color</h2>
+							<h3>{{car.colour}}</h3>
+						</div>
+						<div style="text-align:left">
+							<button ng-click="addToCart(car)" class="contact-link-btn">Add to Cart</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h1 class="title">
+			About the Product
+		</h1>
+		<hr style="width:25%; margin:0 auto; border:1px solid #eaea06;"/>
+		<br/>
+		<div class="car-desc">
+			{{car.description}}
+		</div>
+	</div>
+</div>
+<div class="sidebar-overlay" ng-click="hideSideBar()">
+</div>
+<div class="sidebar">
+	<h2>Your Cart</h2> 
+	<br/>
+	<hr/>
+	<br/>
+	<div class="cart-item-container" ng-repeat="item in cartItems track by $index">
+		<div class="cart-item-mod"><img style=" width:70px; height:70px; border-radius:70px;" ng-src="{{item.imgUrl}}"/></div>
+		<div style="width:100px; padding-left:20px;" class="cart-item-mod">
+			<h3>Item</h3><br/><i>{{item.name}}</i>
+		</div>
+		<div style="width:100px; padding-left:20px;" class="cart-item-mod">
+			<h3>QTY</h3><br/><i>1</i>
+		</div>
+		<div class="cart-item-mod">
+			<h3>Price</h3><br/><i>${{item.price}}</i>
+		</div>
+		<div class="cart-item-mod">
+			<div class="close-icon">
+				<i class="fa fa-times" aria-hidden="true"></i>
+			</div>
+		</div>
+	</div>
+	<hr/>
+	<br/>
+	<h3>Total: $145.27</h3><br/><br/>
+	<button class="contact-link-btn">Checkout</button>
+</div>
